@@ -121,12 +121,13 @@ module Rexpro
       end
 
       def to_msgpack(*args)
-        self.class.fields.map do |field|
+        object = self.class.fields.map do |field|
           value = send(field)
           field_method = self.class.field_methods[field]
           value = value.send(field_method) if field_method
           value
-        end.to_msgpack(*args)
+        end
+        MessagePack.pack(*args, object)
       end
 
       def write_to(io)
