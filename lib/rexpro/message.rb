@@ -127,7 +127,7 @@ module Rexpro
           value = value.send(field_method) if field_method
           value
         end
-        MessagePack.pack(*args, object)
+        MessagePack.pack(object)
       end
 
       def write_to(io)
