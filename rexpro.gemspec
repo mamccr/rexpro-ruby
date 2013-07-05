@@ -20,7 +20,7 @@ DESC
   spec.test_files    = spec.files.grep(%r{^spec/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "msgpack-jruby",     "~> 1.3.1"
+  spec.add_dependency "msgpack-jruby"
   spec.add_dependency "uuid",        "~> 2.3.7"
   spec.add_dependency "tcp_timeout", "~> 0.1.1"
 
